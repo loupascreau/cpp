@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 14:45:09 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/23 14:51:19 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/11/24 15:25:43 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,10 @@ _YELLOW	= \033[0;33m
 _MAG 	= \033[0;35m
 #------#
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp \
+				PhoneBook.cpp \
+				add.cpp \
+				search.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
@@ -35,10 +38,10 @@ all:		${NAME}
 			@echo "$(_GREEN)Phone_book is ready $(_END)"
 
 $(NAME):	${OBJS}
-			${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
 
 %.o:		%.c
-			${CC} -o $@ -c $<
+			${CC} -o $@ -c $< -I.
 
 clean:
 			${RM} ${OBJS}
