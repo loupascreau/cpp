@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/25 10:23:47 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/25 11:17:54 by lpascrea         ###   ########.fr        #
+#    Created: 2021/11/25 13:34:41 by lpascrea          #+#    #+#              #
+#    Updated: 2021/11/25 13:39:30 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,14 @@ _YELLOW	= \033[0;33m
 _MAG 	= \033[0;35m
 #------#
 
-SRCS		=	Account.cpp \
-				test.cpp
+SRCS		=	tests.cpp \
+				Account.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	clang++
 
-CFLAGS		=	-Wall -Wextra -Werror -g
+CFLAGS		=	-Wall -Wextra -Werror
 
 RM			=	rm -f
 
@@ -39,13 +39,13 @@ $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
 
 %.o:		%.c
-			${CC} -I. -o $@ -c $<
+			${CC} -o $@ -c $< -I.
 
 clean:
 			${RM} ${OBJS}
 			@echo "$(_YELLOW)\".o\" files deleted $(_END)"
 
-flcean:		clean
+fclean:		clean
 			${RM} ${NAME}
 			@echo "$(_RED)Account cleaned $(_END)"
 
