@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:00:27 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/24 14:56:07 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/25 10:00:04 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PhoneBook::PhoneBook() : m_firstName(""), m_lastName(""), m_nickname(""), m_phoneNbr(""), m_darkSecret("")
 {
-	std::cout << "constructeur called" << std::endl;
+//	std::cout << "constructeur called" << std::endl;
 }
 
 std::string	PhoneBook::getFirstName(void) const
@@ -69,11 +69,11 @@ void	PhoneBook::setDarkestSecret(std::string darkSecret)
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << "destructeur called" << std::endl;
+/*	std::cout << "destructeur called" << std::endl;
 	std::cout << "first name = " << this->m_firstName << std::endl;
 	std::cout << "last name = " << this->m_lastName << std::endl;
 	std::cout << "Nickname = " << this->m_nickname << std::endl;
 	std::cout << "Phone number = " << this->m_phoneNbr << std::endl;
 	std::cout << "Darkest secret = " << this->m_darkSecret << std::endl;
-	std::cout << std::endl;
+	std::cout << std::endl;*/
 }
