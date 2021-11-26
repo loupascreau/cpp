@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:07:11 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/25 16:23:08 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/11/26 11:18:14 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ _MAG 	= \033[0;35m
 #------#
 
 SRCS		=	main.cpp \
-				Zombie.cpp
+				Zombie.cpp \
+				newZombie.cpp \
+				randomChump.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
