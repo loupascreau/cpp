@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:57:37 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/24 15:28:57 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:33:55 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		main(void)
 {
 	std::string string;
-	PhoneBook	contact[8];
+	PhoneBook	phonebook;
 	int			i;
 	
 	i = 0;
@@ -28,15 +28,15 @@ int		main(void)
 		else if (string.compare("ADD") == 0 && string.length() == 3)
 		{
 			if (i == 8)
-				toMuchContacts(contact, 0);
+				toMuchContacts(&phonebook, 0);
 			else
 			{
-				fillContactInfos(contact[i]);
+				fillContactInfos(&phonebook.contact[i]);
 				i++;
 			}
 		}
 		else if (string.compare("SEARCH") == 0 && string.length() == 6)
-			searchContact(contact, 0);
+			searchContact(&phonebook, 0);
 	}
 	return 0;
 }

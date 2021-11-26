@@ -6,20 +6,20 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:00:57 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/24 14:52:33 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:23:21 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-class PhoneBook
+class Contact
 {
 	public :
-	
-	PhoneBook(void);
-	~PhoneBook(void);
-	
+
+	Contact(void);
+	~Contact(void);	
+
 	std::string	getFirstName(void) const;
 	std::string	getLastName(void) const;
 	std::string	getNickname(void) const;
@@ -39,6 +39,16 @@ class PhoneBook
 	std::string m_nickname;
 	std::string	m_phoneNbr;
 	std::string	m_darkSecret;
+};
+
+class PhoneBook
+{
+	public :
+	
+	PhoneBook(void);
+	~PhoneBook(void);
+	
+	Contact	contact[8];
 };
 
 #endif

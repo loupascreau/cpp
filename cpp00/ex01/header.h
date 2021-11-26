@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:37:40 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/25 09:44:53 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:33:46 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@
 /*							 ADD fonctions									  */
 /******************************************************************************/
 
-void	fillContactInfos(PhoneBook &contact);
-void	toMuchContacts(PhoneBook *contact, int i);
+void	fillContactInfos(Contact *contact);
+void	toMuchContacts(PhoneBook *phonebook, int i);
 
 /******************************************************************************/
 /*							SEARCH fonctions								  */
 /******************************************************************************/
 
-void	searchContact(PhoneBook *contact, int i);
+void	searchContact(PhoneBook *phonebook, int i);
 
 #endif

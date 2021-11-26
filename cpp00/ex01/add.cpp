@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:57:27 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/24 14:48:02 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:34:09 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,24 @@ int		isCorrectNumber(std::string buffer)
 	return 1;
 }
 
-void	fillContactInfos(PhoneBook &contact)
+void	fillContactInfos(Contact *contact)
 {
 	std::string	buffer;
 
 	std::cout << BLUE << "First name : " << WHITE;
 	std::cin >> buffer;
-	contact.setFirstName(buffer);
+	contact->setFirstName(buffer);
 	std::cout << BLUE << "Last name : " << WHITE;
 	std::cin >> buffer;
-	contact.setLastName(buffer);
+	contact->setLastName(buffer);
 	std::cout << BLUE << "Nickname : " << WHITE;
 	std::cin >> buffer;
-	contact.setNickname(buffer);
+	contact->setNickname(buffer);
 	while (1)
 	{
 		std::cout << BLUE << "Phone number : " << WHITE;
 		std::cin >> buffer;
-		contact.setPhoneNumber(buffer);
+		contact->setPhoneNumber(buffer);
 		if (isCorrectNumber(buffer))
 			break ;
 		else
@@ -52,10 +52,10 @@ void	fillContactInfos(PhoneBook &contact)
 	}
 	std::cout << BLUE << "Darkest secret : " << WHITE;
 	std::cin >> buffer;
-	contact.setDarkestSecret(buffer);
+	contact->setDarkestSecret(buffer);
 }
 
-void	toMuchContacts(PhoneBook *contact, int i)
+void	toMuchContacts(PhoneBook *phonebook, int i)
 {
 	std::cout << RED << "!" << WHITE << " You have already filled in the 8 available contacts " \
 	<< RED << "!" << WHITE << std::endl;
@@ -64,5 +64,5 @@ void	toMuchContacts(PhoneBook *contact, int i)
 	if (i < 0 || i > 7)
 		std::cout << "You entered a wrong number" << std::endl;
 	else
-		fillContactInfos(contact[i]);
+		fillContactInfos(&phonebook->contact[i]);
 }

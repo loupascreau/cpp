@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:25:26 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/25 10:08:45 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:34:33 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,32 @@ void	truncateStringToLong(std::string str)
 	std::cout << std::setw(10) << str << "|";
 }
 
-void	printIndexContact(std::string buf, PhoneBook *contact)
+void	printIndexContact(std::string buf, PhoneBook *phonebook)
 {
 	std::cout << std::endl;
 	std::cout << BLUE << "First name --> " << WHITE;
-	std::cout << contact[std::stoi(buf)].getFirstName() << std::endl;
+	std::cout << phonebook->contact[std::stoi(buf)].getFirstName() << std::endl;
 	std::cout << BLUE << "Last name --> " << WHITE;
-	std::cout << contact[std::stoi(buf)].getLastName() << std::endl;
+	std::cout << phonebook->contact[std::stoi(buf)].getLastName() << std::endl;
 	std::cout << BLUE << "Nickname --> " << WHITE;
-	std::cout << contact[std::stoi(buf)].getNickname() << std::endl;
+	std::cout << phonebook->contact[std::stoi(buf)].getNickname() << std::endl;
 	std::cout << BLUE << "Phone number --> " << WHITE;
-	std::cout << contact[std::stoi(buf)].getPhoneNumber() << std::endl;
+	std::cout << phonebook->contact[std::stoi(buf)].getPhoneNumber() << std::endl;
 	std::cout << BLUE << "Darkest secret --> " << WHITE;
-	std::cout << contact[std::stoi(buf)].getDarkestSecret() << std::endl;
+	std::cout << phonebook->contact[std::stoi(buf)].getDarkestSecret() << std::endl;
 }
 
-void	chooseIndex(PhoneBook *contact, int i)
+void	chooseIndex(PhoneBook *phonebook, int i)
 {
 	std::string	buf;
 	std::string	index;
 	
 	index = std::to_string(i);
+	if (i == 0)
+	{
+		std::cout << RED << "! " << WHITE << "You don't have any contacts to search" << RED << " !" << WHITE << std::endl;
+		return ;
+	}
 	while (1)
 	{
 		std::cout << "Choose an index number to see full contact informations : ";
@@ -49,28 +54,28 @@ void	chooseIndex(PhoneBook *contact, int i)
 		else
 			std::cout << RED << "!" << WHITE << " Problem with your input, there is no index for this input " << RED << "!" << WHITE << std::endl;
 	}
-	printIndexContact(buf, contact);
+	printIndexContact(buf, phonebook);
 }
 
-void	searchContact(PhoneBook *contact, int i)
+void	searchContact(PhoneBook *phonebook, int i)
 {
-	while (contact[i].getFirstName() != "" && i < 7)
+	while (phonebook->contact[i].getFirstName() != "" && i < 7)
 	{
 		std::cout << std::setw(10) << i << "|";
-		if (contact[i].getFirstName().length() > 10)
-			truncateStringToLong(contact[i].getFirstName());
+		if (phonebook->contact[i].getFirstName().length() > 10)
+			truncateStringToLong(phonebook->contact[i].getFirstName());
 		else
-			std::cout << std::setw(10) << contact[i].getFirstName() << "|";
-		if (contact[i].getLastName().length() > 10)
-			truncateStringToLong(contact[i].getLastName());
+			std::cout << std::setw(10) << phonebook->contact[i].getFirstName() << "|";
+		if (phonebook->contact[i].getLastName().length() > 10)
+			truncateStringToLong(phonebook->contact[i].getLastName());
 		else
-			std::cout << std::setw(10) << contact[i].getLastName() << "|";
-		if (contact[i].getNickname().length() > 10)
-			truncateStringToLong(contact[i].getNickname());
+			std::cout << std::setw(10) << phonebook->contact[i].getLastName() << "|";
+		if (phonebook->contact[i].getNickname().length() > 10)
+			truncateStringToLong(phonebook->contact[i].getNickname());
 		else
-			std::cout << std::setw(10) << contact[i].getNickname() << "|";
+			std::cout << std::setw(10) << phonebook->contact[i].getNickname() << "|";
 		std::cout << std::endl;
 		i++;
 	}
-	chooseIndex(contact, i);
+	chooseIndex(phonebook, i);
 }
