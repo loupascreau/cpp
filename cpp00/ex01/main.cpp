@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:57:37 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/26 12:33:55 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/29 17:42:50 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int		main(void)
 		else if (string.compare("ADD") == 0 && string.length() == 3)
 		{
 			if (i == 8)
-				toMuchContacts(&phonebook, 0);
+				toMuchContacts(&phonebook);
 			else
 			{
-				fillContactInfos(&phonebook.contact[i]);
+				phonebook.setContact(i);
 				i++;
 			}
 		}

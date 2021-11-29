@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:00:57 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/26 12:23:21 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/29 17:42:42 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,13 @@ class PhoneBook
 	
 	PhoneBook(void);
 	~PhoneBook(void);
+
+	Contact	getContact(int index) const;
+	void	setContact(int index);
 	
-	Contact	contact[8];
+	private :
+	
+	Contact	_contact[8];
 };
 
 #endif

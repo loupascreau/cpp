@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 14:45:09 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/24 15:25:43 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/11/29 17:42:31 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,8 @@ all:		${NAME}
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
 
-%.o:		%.c
-			${CC} -o $@ -c $< -I.
+%.o:		%.cpp
+			${CC} ${CFLAGS} -o $@ -c $< -I.
 
 clean:
 			${RM} ${OBJS}
