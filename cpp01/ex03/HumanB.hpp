@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:05:08 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/26 16:22:46 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/29 10:27:43 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,15 @@ class HumanB
 {
 	public :
 	
-	HumanB(Weapon weapon, std::string name);
+	HumanB(std::string name);
 	~HumanB();	
 
+	void	setWeapon(Weapon Weapon);
+	void	attack(void) const;
+	
 	private :
 
-	Weapon		_weapon;
+	Weapon		*_weaponPTR;
 	std::string	_name;
 };
 

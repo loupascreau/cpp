@@ -6,15 +6,25 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:05:47 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/26 16:23:25 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/29 10:45:34 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(Weapon weapon, std::string name) : _weapon(weapon), _name(name)
+HumanB::HumanB(std::string name) : _name(name), _weaponPTR(NULL)
 {
 
+}
+
+void	HumanB::setWeapon(Weapon Weapon)
+{
+	this->_weaponPTR = &Weapon;
+}
+
+void	HumanB::attack(void) const
+{
+	std::cout << BLUE << this->_name << WHITE << " attacks with his " << YELLOW << this->_weaponPTR->getType() << WHITE << std::endl;
 }
 
 HumanB::~HumanB()
