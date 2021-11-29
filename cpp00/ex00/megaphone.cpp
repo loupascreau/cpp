@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 11:53:22 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/22 14:11:57 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/29 16:14:14 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		main(int argc, char **argv)
 			std::cout << argv[i][j];
 			j++;
 		}
-		std::cout << " ";
 		i++;
 	}
 	if (argc == 1)
