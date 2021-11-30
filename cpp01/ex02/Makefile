@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 15:09:20 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/26 15:10:19 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/11/30 16:02:02 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	g++
 
+CFLAGS		=	-Wall -Wextra -Werror
+
 RM			=	rm -f
 
 NAME		=	brain
@@ -35,8 +37,8 @@ all:		${NAME}
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
 
-%.o:		%.c
-			${CC} -o $@ -c $< -I.
+%.o:		%.cpp
+			${CC} ${CFLAGS} -o $@ -c $< -I.
 
 clean:
 			${RM} ${OBJS}

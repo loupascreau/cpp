@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:07:11 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/26 11:18:14 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/11/30 15:58:52 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	g++
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 RM			=	rm -f
 
@@ -40,8 +40,8 @@ all:		${NAME}
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
 
-%.o:		%.c
-			${CC} -o $@ -c $< -I.
+%.o:		%.cpp
+			${CC} ${CFLAGS} -o $@ -c $< -I.
 
 clean:
 			${RM} ${OBJS}

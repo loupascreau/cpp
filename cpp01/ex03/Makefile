@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 15:46:32 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/26 16:31:05 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/11/30 16:29:55 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	g++
 
+CFLAGS		=	-Wall -Wextra -Werror
+
 RM			=	rm -f
 
 NAME		=	warzone
@@ -38,8 +40,8 @@ all:		${NAME}
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
 
-%.o:		%.c
-			${CC} -o $@ -c $< -I.
+%.o:		%.cpp
+			${CC} ${CFLAGS} -o $@ -c $< -I.
 
 clean:
 			${RM} ${OBJS}
