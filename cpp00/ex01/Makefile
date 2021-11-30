@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 14:45:09 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/29 17:42:31 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/11/30 15:40:50 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ _MAG 	= \033[0;35m
 SRCS		=	main.cpp \
 				PhoneBook.cpp \
 				add.cpp \
-				search.cpp
+				search.cpp \
+				Contact.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 

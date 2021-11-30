@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:37:40 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/11/29 17:32:22 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/11/30 15:41:14 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <iomanip>
 # include "PhoneBook.hpp"
+# include "Contact.hpp"
 
 /******************************************************************************/
 /*								Colors										  */
