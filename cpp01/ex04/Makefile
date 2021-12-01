@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/29 11:05:07 by lpascrea          #+#    #+#              #
-#    Updated: 2021/11/30 16:30:52 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/01 17:51:22 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ _MAG 	= \033[0;35m
 
 SRCS		=	main.cpp \
 				errors.cpp \
+				Replace.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
