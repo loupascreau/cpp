@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/29 11:05:07 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/01 18:19:44 by lpascrea         ###   ########.fr        #
+#    Created: 2021/12/01 18:19:34 by lpascrea          #+#    #+#              #
+#    Updated: 2021/12/01 18:20:09 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,22 +19,20 @@ _YELLOW	= \033[0;33m
 _MAG 	= \033[0;35m
 #------#
 
-SRCS		=	main.cpp \
-				errors.cpp \
-				Replace.cpp
+SRCS		=	main.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	g++
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 RM			=	rm -f
 
-NAME		=	replace
+NAME		=	karen
 
 all:		${NAME}
-			@echo "$(_GREEN)Replace is ready $(_END)"
+			@echo "$(_GREEN)karen is ready $(_END)"
 
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
@@ -48,7 +46,7 @@ clean:
 
 fclean:		clean
 			${RM} ${NAME}
-			@echo "$(_RED)Replace cleaned $(_END)"
+			@echo "$(_RED)karen cleaned $(_END)"
 
 re:			fclean all
 
