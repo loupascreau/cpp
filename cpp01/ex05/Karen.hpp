@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 18:18:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/02 10:49:00 by lpascrea         ###   ########.fr       */
+/*   Created: 2021/12/02 09:00:44 by lpascrea          #+#    #+#             */
+/*   Updated: 2021/12/02 10:50:16 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Karen.hpp"
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-int		main(void)
+# include <iostream>
+
+# define	WHITE	"\033[0m"
+# define	YELLOW	"\033[0;33m"
+
+class Karen
 {
-	Karen	karen;
+	public :
 
-	karen.complain("debug");
-	karen.complain("info");
-	karen.complain("warning");
-	karen.complain("error");
-	return 0;
-}
+	Karen();
+	~Karen();
+
+	void	complain(std::string level);
+
+	private :
+
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+};
+
+#endif

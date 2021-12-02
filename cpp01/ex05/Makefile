@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 18:19:34 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/01 18:20:09 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/02 11:33:38 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,14 @@ _YELLOW	= \033[0;33m
 _MAG 	= \033[0;35m
 #------#
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp \
+				Karen.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	g++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror
 
 RM			=	rm -f
 
