@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 18:19:34 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/02 11:33:38 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/02 11:40:46 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS		=	main.cpp \
 
 OBJS		=	${SRCS:.cpp=.o}
 
-CC			=	g++
+CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror
 
@@ -33,7 +33,7 @@ RM			=	rm -f
 NAME		=	karen
 
 all:		${NAME}
-			@echo "$(_GREEN)karen is ready $(_END)"
+			@echo "$(_GREEN)Karen is ready $(_END)"
 
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
@@ -47,7 +47,7 @@ clean:
 
 fclean:		clean
 			${RM} ${NAME}
-			@echo "$(_RED)karen cleaned $(_END)"
+			@echo "$(_RED)Karen cleaned $(_END)"
 
 re:			fclean all
 

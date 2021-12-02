@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/26 15:09:20 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/02 11:40:28 by lpascrea         ###   ########.fr        #
+#    Created: 2021/12/02 11:35:58 by lpascrea          #+#    #+#              #
+#    Updated: 2021/12/02 11:39:57 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,14 +25,14 @@ OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 RM			=	rm -f
 
-NAME		=	brain
+NAME		=	karen_filter
 
 all:		${NAME}
-			@echo "$(_GREEN)Brain is ready $(_END)"
+			@echo "$(_GREEN)Karen_filter is ready $(_END)"
 
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
@@ -46,7 +46,7 @@ clean:
 
 fclean:		clean
 			${RM} ${NAME}
-			@echo "$(_RED)Brain cleaned $(_END)"
+			@echo "$(_RED)Karen_filter cleaned $(_END)"
 
 re:			fclean all
 
