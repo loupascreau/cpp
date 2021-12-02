@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 09:02:57 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/02 12:23:27 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:20:47 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ Karen::Karen(void) : _index(0)
 
 void	Karen::setIndex(std::string str)
 {
-	this->_messages[0] = "debug";
-	this->_messages[1] = "info";
-	this->_messages[2] = "warning";
-	this->_messages[3] = "error";
+	this->_messages[0] = "DEBUG";
+	this->_messages[1] = "INFO";
+	this->_messages[2] = "WARNING";
+	this->_messages[3] = "ERROR";
 
 	while (this->_index < 4)
 	{
