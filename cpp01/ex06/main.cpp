@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 11:36:08 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/02 12:19:04 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/02 13:41:40 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		errorNbArgs(void)
 {
-	std::cerr << "You need one argument to execute the program" << std::endl;
+	std::cout << "You need one argument to execute the program" << std::endl;
 	return 0;
 }
 
