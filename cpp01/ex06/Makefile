@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 11:35:58 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/02 11:39:57 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/02 12:24:38 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,20 +19,21 @@ _YELLOW	= \033[0;33m
 _MAG 	= \033[0;35m
 #------#
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp \
+				Karen.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror
 
 RM			=	rm -f
 
-NAME		=	karen_filter
+NAME		=	karenFilter
 
 all:		${NAME}
-			@echo "$(_GREEN)Karen_filter is ready $(_END)"
+			@echo "$(_GREEN)KarenFilter is ready $(_END)"
 
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
@@ -46,7 +47,7 @@ clean:
 
 fclean:		clean
 			${RM} ${NAME}
-			@echo "$(_RED)Karen_filter cleaned $(_END)"
+			@echo "$(_RED)KarenFilter cleaned $(_END)"
 
 re:			fclean all
 
