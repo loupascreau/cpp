@@ -6,11 +6,10 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 18:18:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/02 10:49:00 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/02 11:36:38 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Karen.hpp"
 
 int		main(void)
