@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 14:49:01 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/02 14:50:06 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/03 11:54:19 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ _YELLOW	= \033[0;33m
 _MAG 	= \033[0;35m
 #------#
 
-SRCS		=	main.cpp 
+SRCS		=	main.cpp \
+				Fixed.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
@@ -29,10 +30,10 @@ CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 RM			=	rm -f
 
-NAME		=	canon
+NAME		=	canonique
 
 all:		${NAME}
-			@echo "$(_GREEN)Canon is ready $(_END)"
+			@echo "$(_GREEN)Canonique is ready $(_END)"
 
 $(NAME):	${OBJS}
 			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
@@ -46,7 +47,7 @@ clean:
 
 fclean:		clean
 			${RM} ${NAME}
-			@echo "$(_RED)Canon cleaned $(_END)"
+			@echo "$(_RED)Canonique cleaned $(_END)"
 
 re:			fclean all
 
