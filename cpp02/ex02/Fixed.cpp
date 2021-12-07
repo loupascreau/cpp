@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 10:05:41 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/06 16:29:52 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/07 09:55:59 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,12 @@ bool	Fixed::operator!=(Fixed const &rhs)
 
 Fixed	Fixed::operator+(Fixed const &rhs) const
 {
-	Fixed	result;
-	
-	result.setRawBits(this->getRawBits() + rhs.getRawBits());
-	return result.toFloat();
+	return this->toFloat() + rhs.toFloat();
 }
 
 Fixed	Fixed::operator-(Fixed const &rhs) const
 {
-	Fixed	result;
-	
-	result.setRawBits(this->getRawBits() - rhs.getRawBits());
-	return result.toFloat();
+	return this->toFloat() - rhs.toFloat();
 }
 
 Fixed	Fixed::operator*(Fixed const &rhs) const
