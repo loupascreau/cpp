@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/07 11:56:22 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:47:11 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		main(void)
 {
-	std::cout << "ok" << std::endl;
+	ClapTrap	superman("Superman");
+	ClapTrap	batman("Batman");
+	
 	return 0;
 }

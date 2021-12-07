@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 14:49:01 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/07 11:51:46 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/07 13:49:49 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ _YELLOW	= \033[0;33m
 _MAG 	= \033[0;35m
 #------#
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp \
+				ClapTrap.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
