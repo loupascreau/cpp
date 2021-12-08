@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:54:03 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 09:59:15 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 14:58:02 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,18 @@ class ClapTrap
 	public :
 	
 	ClapTrap(std::string name);
+	ClapTrap(ClapTrap const &obj);
 	~ClapTrap();
+
+	ClapTrap &	operator=(ClapTrap const &obj);
 
 	void	attack(std::string const &target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 
-	int		getAttackDamage(void) const;
-	int		getEnergyPoints(void) const;
+	int			getAttackDamage(void) const;
+	int			getEnergyPoints(void) const;
+	std::string	getName(void) const;
 	
 	private :	
 

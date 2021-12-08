@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:53:39 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 10:05:04 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 14:59:26 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,19 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoint
 	std::cout << "Energy points = " << this->_energyPoints << std::endl;
 	std::cout << "Attack damage = " << this->_attackDamage << std::endl;
 	std::cout << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &obj)
+{
+	*this = obj;
+	return ;
+}
+
+ClapTrap &	ClapTrap::operator=(ClapTrap const &obj)
+{
+	if (this != &obj)
+		this->_name = obj.getName();
+	return *this;
 }
 
 void	ClapTrap::attack(std::string const &target)
@@ -65,6 +78,11 @@ int		ClapTrap::getAttackDamage(void) const
 int		ClapTrap::getEnergyPoints(void) const
 {
 	return this->_energyPoints;
+}
+
+std::string	ClapTrap::getName(void) const
+{
+	return this->_name;
 }
 
 ClapTrap::~ClapTrap()
