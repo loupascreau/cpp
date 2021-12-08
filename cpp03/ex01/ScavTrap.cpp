@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:16:53 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 15:26:15 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 15:44:44 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	ScavTrap::guardGate(void)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "! Dead from ScavTrap destructor !" << std::endl;
+	std::cout << "! " << YELLOW << this->_name << WHITE << " Dead from ScavTrap destructor !" << std::endl;
 }
