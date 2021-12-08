@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:13:19 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 12:13:25 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 15:18:04 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ class ScavTrap : public ClapTrap
 	public :
 	
 	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const &obj);
 	~ScavTrap();
 
+	ScavTrap &	operator=(ScavTrap const &obj);
 	void	guardGate(void);
-
-	private :
-
-	int		_guardMode;
 
 };
 
