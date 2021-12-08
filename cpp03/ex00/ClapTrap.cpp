@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:53:39 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/07 16:47:10 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 10:05:04 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,67 @@
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "[ " << this->_name << " ] created from the constructor" << std::endl;
-	std::cout << "Hit points = " << this->_hitPoints << std::endl;
+	std::cout << "[ " << YELLOW << this->_name << WHITE << " ] created from the constructor" << std::endl;
+	std::cout << "Hit points    = " << this->_hitPoints << std::endl;
 	std::cout << "Energy points = " << this->_energyPoints << std::endl;
 	std::cout << "Attack damage = " << this->_attackDamage << std::endl;
+	std::cout << std::endl;
 }
 
 void	ClapTrap::attack(std::string const &target)
 {
-	
+	if (this->_hitPoints > 0)
+	{
+		this->_attackDamage = 1 + std::rand() / ((RAND_MAX + 1u) / 6);
+		std::cout << "ClapTrap " << YELLOW << this->_name << WHITE << " attack " << YELLOW << target << WHITE;
+		std::cout << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
+		this->_hitPoints -= this->_attackDamage;
+	}
+	else
+		std::cout << YELLOW << this->_name << WHITE << " has not enought hit points to attack !" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	
+	if (this->_energyPoints <= 0)
+	{
+		std::cout << YELLOW << this->_name << WHITE << " is already dead " << RED "x" << WHITE << std::endl;
+		return ;
+	}
+	std::cout << "ClapTrap " << YELLOW << this->_name << WHITE << " take " << amount;
+	std::cout << " points of damage !" << std::endl;
+	this->_energyPoints -= amount;
+	this->_hitPoints++;
+	if (this->_energyPoints <= 0)
+		std::cout << YELLOW << this->_name << WHITE << " is dead " << RED << "x" << WHITE << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	(void)amount;
+	this->_energyPoints += amount / 2;
+	std::cout << "ClapTrap " << YELLOW << this->_name << WHITE;
+	std::cout << " is repaired by " << amount / 2 << " points energy !" << std::endl;
+	std::cout << std::endl;
+}
+
+int		ClapTrap::getAttackDamage(void) const
+{
+	return this->_attackDamage;
+}
+
+int		ClapTrap::getEnergyPoints(void) const
+{
+	return this->_energyPoints;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "[ " << this->_name << " ] dead from the destructor" << std::endl;
-	std::cout << "Hit points = " << this->_hitPoints << std::endl;
-	std::cout << "Energy points = " << this->_energyPoints << std::endl;
+	std::cout << std::endl;
+	std::cout << "[ " << YELLOW << this->_name << WHITE << " ] dead from the destructor" << std::endl;
+	std::cout << "Hit points    = " << this->_hitPoints << std::endl;
+	if (this->_energyPoints <= 0)
+		std::cout << RED << "Energy points " << WHITE << "= " << this->_energyPoints << std::endl;
+	else
+		std::cout << "Energy points = " << this->_energyPoints << std::endl;
 	std::cout << "Attack damage = " << this->_attackDamage << std::endl;
 }
