@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 12:16:12 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 15:35:27 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		main(void)
 {
 	ScavTrap	superman("Superman");
-	ScavTrap	batman("Batman");
+	ClapTrap	batman("Batman");
 	
 	std::srand(std::time(NULL));
 	while (1)
@@ -31,7 +31,6 @@ int		main(void)
 		batman.beRepaired(batman.getAttackDamage());
 		if (superman.getEnergyPoints() <= 0)
 			break ;
-		batman.guardGate();
 	}
 	return 0;
 }
