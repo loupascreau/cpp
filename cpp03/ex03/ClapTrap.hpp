@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:54:03 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 15:21:54 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/09 13:40:45 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap
 
 	ClapTrap(std::string name);
 	ClapTrap(ClapTrap const &obj);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	ClapTrap &	operator=(ClapTrap const &obj);
 

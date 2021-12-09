@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:26:57 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 16:27:07 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:58:51 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ FragTrap::FragTrap(std::string name) : ClapTrap()
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
+	this->_myHitPoints = this->_hitPoints;
+	this->_myAttackDamage = this->_attackDamage;
 	std::cout << "[ " << YELLOW << name << WHITE << " ] created from FragTrap constructor !" << std::endl;
 	std::cout << "Hit points    = " << this->_hitPoints << std::endl;
 	std::cout << "Energy points = " << this->_energyPoints << std::endl;
@@ -28,6 +30,20 @@ FragTrap::FragTrap(std::string name) : ClapTrap()
 FragTrap::FragTrap()
 {
 	std::cout << "FragTrap constructor called" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+	this->_myHitPoints = this->_hitPoints;
+	this->_myAttackDamage = this->_attackDamage;
+	std::cout << "Hit points    = " << this->_hitPoints << std::endl;
+	std::cout << "Energy points = " << this->_energyPoints << std::endl;
+	std::cout << "Attack damage = " << this->_attackDamage << std::endl;
+}
+
+FragTrap::FragTrap(FragTrap const &obj)
+{
+	*this = obj;
+	return ;
 }
 
 FragTrap &	FragTrap::operator=(FragTrap const &obj)
@@ -42,9 +58,16 @@ void	FragTrap::highFivesGuys(void)
 	std::cout << " requesting a positive high fives ! " << RED << "<--" << WHITE << std::endl;
 }
 
-int		FragTrap::getHitPoints(void) const
+int		FragTrap::setHitPoints(void)
 {
+	this->_hitPoints = this->_myHitPoints;
 	return this->_hitPoints;
+}
+
+int		FragTrap::setAttackDamage(void)
+{
+	this->_attackDamage = this->_myAttackDamage;
+	return this->_attackDamage;
 }
 
 FragTrap::~FragTrap()
