@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:53:39 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 15:45:52 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/09 07:36:16 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "[ " << YELLOW << this->_name << WHITE << " ] created from the constructor" << std::endl;
+	std::cout << "[ " << YELLOW << this->_name << WHITE << " ] created from the ClapTrap constructor" << std::endl;
 	std::cout << "Hit points    = " << this->_hitPoints << std::endl;
 	std::cout << "Energy points = " << this->_energyPoints << std::endl;
 	std::cout << "Attack damage = " << this->_attackDamage << std::endl;
@@ -42,7 +42,7 @@ void	ClapTrap::attack(std::string const &target)
 {
 	if (this->_hitPoints > 0)
 	{
-		this->_attackDamage = 1 + std::rand() / (RAND_MAX / 20);
+		this->_attackDamage = 1 + std::rand() / (RAND_MAX / 10);
 		std::cout << "ClapTrap " << YELLOW << this->_name << WHITE << " attack " << YELLOW << target << WHITE;
 		std::cout << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
 		this->_hitPoints -= this->_attackDamage;

@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:53:39 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 14:59:26 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/09 07:32:53 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ ClapTrap::ClapTrap(ClapTrap const &obj)
 
 ClapTrap &	ClapTrap::operator=(ClapTrap const &obj)
 {
-	if (this != &obj)
-		this->_name = obj.getName();
+	std::cout << "Assignation operator inutile for " << &obj << std::endl;
 	return *this;
 }
 
