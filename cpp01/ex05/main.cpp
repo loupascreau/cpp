@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 18:18:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/02 11:36:38 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:29:47 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int		main(void)
 {
 	Karen	karen;
 
-	karen.complain("debug");
-	karen.complain("info");
-	karen.complain("warning");
-	karen.complain("error");
+	karen.complain("DEBUG");
+	karen.complain("INFO");
+	karen.complain("WARNING");
+	karen.complain("ERROR");
 	return 0;
 }

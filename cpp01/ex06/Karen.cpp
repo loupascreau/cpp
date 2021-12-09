@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 09:02:57 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/02 16:20:47 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:31:54 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,10 @@ void	Karen::complain(std::string level)
 	void		(Karen::*complain[4])();
 	int			i;
 
-	tabLevel[0] = "debug";
-	tabLevel[1] = "info";
-	tabLevel[2] = "warning";
-	tabLevel[3] = "error";
+	tabLevel[0] = "DEBUG";
+	tabLevel[1] = "INFO";
+	tabLevel[2] = "WARNING";
+	tabLevel[3] = "ERROR";
 	
 	complain[0] = &Karen::debug;
 	complain[1] = &Karen::info;
