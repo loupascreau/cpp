@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:58:36 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/09 15:10:03 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/09 15:22:29 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ DiamondTrap::DiamondTrap(std::string name) : _name(name)
 	std::cout << std::endl;
 }
 
+DiamondTrap::DiamondTrap(DiamondTrap const &obj)
+{
+	*this = obj;
+	return ;
+}
+
 void	DiamondTrap::attack(std::string const &target)
 {
 	std::cout << RED << "!" << WHITE << " Calling attack() from DiamondTrap from ScavTrap " << RED <<  "!" << WHITE << std::endl;
@@ -34,6 +40,11 @@ void	DiamondTrap::attack(std::string const &target)
 void	DiamondTrap::whoAmI(void)
 {
 	std::cout << "My clap name is " << YELLOW << ClapTrap::_name << WHITE << " and my name is " << YELLOW << this->_name << WHITE << std::endl;
+}
+
+DiamondTrap	&	operator=(DiamondTrap const &obj)
+{
+	
 }
 
 DiamondTrap::~DiamondTrap()
