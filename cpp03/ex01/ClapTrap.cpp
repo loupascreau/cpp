@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:53:39 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/09 08:03:56 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:29:33 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ClapTrap::attack(std::string const &target)
 		this->_hitPoints -= this->_attackDamage;
 	}
 	else
-		std::cout << YELLOW << this->_name << WHITE << " has not enought hit points to attack !" << std::endl;
+		std::cout << YELLOW << this->_name << WHITE << " has not enought hit points to attack ! [ClapTrap]" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
