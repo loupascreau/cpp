@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 10:13:19 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/08 15:18:04 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:33:39 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : public ClapTrap
 
 	ScavTrap &	operator=(ScavTrap const &obj);
 	void	guardGate(void);
+	void	attack(std::string const &target);
 
 };
 
