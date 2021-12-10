@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:26:57 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/09 14:58:51 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:38:56 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,19 @@ void	FragTrap::highFivesGuys(void)
 {
 	std::cout << RED << "--> " << YELLOW << this->getName() << WHITE;
 	std::cout << " requesting a positive high fives ! " << RED << "<--" << WHITE << std::endl;
+}
+
+void	FragTrap::attack(std::string const &target)
+{
+	if (this->_hitPoints > 0)
+	{
+		this->_attackDamage = 1 + std::rand() / (RAND_MAX / 50);
+		std::cout << "FragTrap " << YELLOW << this->_name << WHITE << " attack " << YELLOW << target << WHITE;
+		std::cout << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
+		this->_hitPoints -= this->_attackDamage;
+	}
+	else
+		std::cout << YELLOW << this->_name << WHITE << " has not enought hit points to attack ! [FragTrap]" << std::endl;
 }
 
 int		FragTrap::setHitPoints(void)
