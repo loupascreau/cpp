@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 10:32:17 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/10 14:33:44 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/13 10:02:44 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ std::string	Animal::getType(void) const
 
 Animal::~Animal()
 {
-	std::cout << "Destructeur Animal called" << std::endl;
+	std::cout << "Destructor Animal called" << std::endl;
 }

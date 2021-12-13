@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:44:56 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/10 14:32:58 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/13 09:51:10 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat()
 	std::cout << "Constructor Cat called" << std::endl;
 }
 
-Cat::Cat(Cat const &obj)
+Cat::Cat(Cat const &obj) : Animal()
 {
 	*this = obj;
 	return ;

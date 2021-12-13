@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:20:55 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/10 14:32:58 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/13 10:02:39 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog()
 	std::cout << "Constructor Dog called" << std::endl;
 }
 
-Dog::Dog(Dog const &obj)
+Dog::Dog(Dog const &obj) : Animal()
 {
 	*this = obj;
 	return ;
@@ -37,5 +37,5 @@ void	Dog::makeSound(void) const
 
 Dog::~Dog()
 {
-	std::cout << "Destructeur Animal called" << std::endl;
+	std::cout << "Destructor Dog called" << std::endl;
 }
