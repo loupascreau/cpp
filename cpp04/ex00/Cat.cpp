@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:44:56 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 09:51:10 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:18:41 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Cat::Cat(Cat const &obj) : Animal()
 
 Cat &	Cat::operator=(Cat const &obj)
 {
-	std::cout << "Assignation operator useless for " << &obj << std::endl;
+	this->_type = obj.getType();
 	return *this;
 }
 
