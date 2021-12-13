@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 10:08:07 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 12:15:43 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:26:18 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Brain
 	void		setIdeas(std::string idea, int i);
 	std::string	getIdeas(int i) const;
 	void		setType(std::string type);
+	std::string	getType(void) const;
 
 	private :
 

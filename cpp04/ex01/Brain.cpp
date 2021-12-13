@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 10:08:11 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 12:18:55 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:26:57 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,15 @@ Brain::Brain(Brain const &obj)
 
 Brain &	Brain::operator=(Brain const &obj)
 {
-	std::cout << "Assignation operator useless for " << &obj << std::endl;
+	int		i;
+
+	i = 0;
+	this->_type = obj.getType();
+	while (i < 100)
+	{
+		this->_ideas[i] = obj.getIdeas(i);
+		i++;
+	}
 	return *this;
 }
 
@@ -54,6 +62,11 @@ std::string	Brain::getIdeas(int i) const
 void	Brain::setType(std::string type)
 {
 	this->_type = type;
+}
+
+std::string	Brain::getType(void) const
+{
+	return this->_type;
 }
 
 Brain::~Brain()
