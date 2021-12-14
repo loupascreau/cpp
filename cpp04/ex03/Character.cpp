@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 10:35:30 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 10:40:55 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 11:34:42 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 Character::Character() : _name("")
 {
-	std::cout << "Constructor Character called" << std::endl;
+	std::cout << "Default Constructor Character called" << std::endl;
+}
+
+Character::Character(std::string name) : _name(name)
+{
+	std::cout << "Constructor Character called - (name is set)" << std::endl;
 }
 
 Character::Character(Character const &obj)

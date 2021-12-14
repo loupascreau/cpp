@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:02:53 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 10:42:22 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:02:35 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AMateria
 	std::string const	&getType(void) const;
 
 	virtual AMateria	*clone(void) const = 0;
-	virtual void		use(ICharacter &target);
+//	virtual void		use(ICharacter &target);
 
 	protected :
 

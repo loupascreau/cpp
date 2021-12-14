@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 10:33:10 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 12:02:13 by lpascrea         ###   ########.fr       */
+/*   Created: 2021/12/14 11:04:31 by lpascrea          #+#    #+#             */
+/*   Updated: 2021/12/14 12:04:39 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#ifndef MATERIA_SOURCE_HPP
+# define MATERIA_SOURCE_HPP
 
-# include "ICharacter.hpp"
+# include "IMateriaSource.hpp"
 
-class Character : public ICharacter
+class MateriaSource : public IMateriaSource
 {
 	public :
 	
-	Character();
-	Character(std::string name);
-	Character(Character const &obj);
-	~Character();
+	MateriaSource();
+	MateriaSource(MateriaSource const &obj);
+	~MateriaSource();
 
-	Character &	operator=(Character const &obj);
+	MateriaSource &	operator=(MateriaSource const &obj);
 
-	std::string const 	&getName() const;
-/*	void				equip(AMateria *m);
-	void				unequip(int idx);
-	void				use(int idx, ICharacter &target);*/
-	
+	void		learnMateria(AMateria *toCopy);
+	AMateria	*createMateria(std::string const &type);
+
+	AMateria	*getAmateria(int i) const;
+
 	private :
 
-	std::string _name;
+	static int	_i;
+	AMateria	*_amateria[4];
 };
 
 #endif

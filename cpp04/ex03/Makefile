@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 14:49:01 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/14 10:41:42 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/14 11:04:20 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS		=	main.cpp \
 				AMateria.cpp \
 				Ice.cpp \
 				Cure.cpp \
-				Character.cpp
+				Character.cpp \
+				MateriaSource.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 

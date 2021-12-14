@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:06:14 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 10:42:25 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:15:52 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,13 @@ std::string	const	&AMateria::getType(void) const
 	return this->_type;
 }
 
-void		AMateria::use(ICharacter &target)
+/*void		AMateria::use(ICharacter &target)
 {
 	
-}
+}*/
 
 AMateria::~AMateria()
 {
-	std::cout << "Destructor AMateria called" << std::endl;
+	
+	std::cout << "Destructor AMateria called, my type was " << this->_type << std::endl;
 }
