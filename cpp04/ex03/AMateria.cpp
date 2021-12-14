@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:06:14 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 16:02:29 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 10:42:25 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ AMateria &	AMateria::operator=(AMateria const &obj)
 std::string	const	&AMateria::getType(void) const
 {
 	return this->_type;
+}
+
+void		AMateria::use(ICharacter &target)
+{
+	
 }
 
 AMateria::~AMateria()

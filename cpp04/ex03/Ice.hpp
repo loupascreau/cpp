@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:31:33 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 16:00:11 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 10:42:12 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Ice : public AMateria
 	Ice &	operator=(Ice const &obj);
 
 	AMateria	*clone(void) const;
+	void		use(ICharacter &target);
 
 	private :
 

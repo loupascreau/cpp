@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 14:49:01 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/13 15:42:38 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/14 10:41:42 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ _MAG 	= \033[0;35m
 SRCS		=	main.cpp \
 				AMateria.cpp \
 				Ice.cpp \
-				Cure.cpp
+				Cure.cpp \
+				Character.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 

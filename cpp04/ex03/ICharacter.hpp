@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:24:18 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 15:47:50 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 10:23:40 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ICharacter
 	
 	virtual	~ICharacter() {}
 	virtual	std::string const 	&getName() const = 0;
-//	virtual void				equip(AMateria *m) = 0;
+	virtual void				equip(AMateria *m) = 0;
 	virtual void				unequip(int idx) = 0;
 	virtual void				use(int idx, ICharacter &target) = 0;
 };

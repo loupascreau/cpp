@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 15:38:00 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 10:42:47 by lpascrea         ###   ########.fr       */
+/*   Created: 2021/12/14 10:33:10 by lpascrea          #+#    #+#             */
+/*   Updated: 2021/12/14 10:39:42 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class Cure : public AMateria
+class Character
 {
 	public :
+	
+	Character();
+	Character(Character const &obj);
+	~Character();
 
-	Cure();
-	Cure(Cure const &obj);
-	~Cure();
+	Character &	operator=(Character const &obj);
 
-	Cure &	operator=(Cure const &obj);
-
-	AMateria	*clone(void) const;
-	void		use(ICharacter &target);
-
+	std::string const 	&getName() const;
+	void				equip(AMateria *m);
+	void				unequip(int idx);
+	void				use(int idx, ICharacter &target);
+	
 	private :
 
-	AMateria	*_amateria;
+	std::string	_name;
 };
 
 #endif
