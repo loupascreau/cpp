@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:37:58 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 16:00:44 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:42:00 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cure::Cure()
 {
 	this->_type = "cure";
-	std::cout << "Constructor Cure called" << std::endl;
+	std::cout << GREEN << "[ CONSTRUCTOR ] " << WHITE << "Constructor Cure called" << std::endl;
 }
 
 Cure::Cure(Cure const &obj) : AMateria()
@@ -35,7 +35,13 @@ AMateria	*Cure::clone(void) const
 	return this->_amateria;
 }
 
+void		Cure::use(ICharacter &target)
+{
+	std::cout << this->getType() << ": * shoots an ice bolt at ";
+	std::cout << target.getName() << " *" << std::endl;
+}
+
 Cure::~Cure()
 {
-	std::cout << "Destructor Cure called" << std::endl;
+	std::cout << RED << "[ DESTRUCTOR ] " << WHITE << "Destructor Cure called" << std::endl;
 }

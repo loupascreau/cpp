@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 11:10:41 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 12:09:31 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:53:03 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	MateriaSource::_i = 0;
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "Constructor MateriaSource called" << std::endl;
+	std::cout << GREEN << "[ CONSTRUCTOR ] " << WHITE << "Constructor MateriaSource called" << std::endl;
 }
 
 MateriaSource::MateriaSource(MateriaSource const &obj)
@@ -40,19 +40,35 @@ MateriaSource &	MateriaSource::operator=(MateriaSource const &obj)
 
 void		MateriaSource::learnMateria(AMateria *toCopy)
 {
+	std::cout << YELLOW << "[ LEARN MATERIA ] " << WHITE;
 	if (_i == 4)
-		std::cout << "Already 4 Materia in memory" << std::endl;
+		std::cout << "Already 4 Materia in memory of materia source";
 	else
 	{
 		this->_amateria[_i] = toCopy;
 		_i += 1;
 	}
+	std::cout << std::endl;
 }
 
-/*AMateria	*MateriaSource::createMateria(std::string const &type)
+AMateria	*MateriaSource::createMateria(std::string const &type)
 {
-	
-}*/
+	int		j;
+
+	j = 0;
+	std::cout << YELLOW << "[ CREATE MATERIA ] " << WHITE;
+	while (j < _i)
+	{
+		if (this->_amateria[j]->getType() == type)
+		{
+			std::cout << "Creating Materia type is " << type << std::endl;
+			return this->_amateria[j];
+		}
+		j++;
+	}
+	std::cout << "Unable to create a Materia type because the type is unknown" << std::endl;
+	return 0;
+}
 
 AMateria	*MateriaSource::getAmateria(int i) const
 {
@@ -69,5 +85,5 @@ MateriaSource::~MateriaSource()
 		delete this->_amateria[j];
 		j++;
 	}
-	std::cout << "Destructor MateriaSource called" << std::endl;
+	std::cout << RED << "[ DESTRUCTOR ] " << WHITE << "Destructor MateriaSource called" << std::endl;
 }

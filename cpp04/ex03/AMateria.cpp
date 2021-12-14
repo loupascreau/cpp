@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:06:14 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 12:15:52 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:41:52 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 AMateria::AMateria() : _type("")
 {
-	std::cout << "Default constructor AMateria called" << std::endl;
+	std::cout << GREEN << "[ CONSTRUCTOR ] " << WHITE << "Default constructor AMateria called" << std::endl;
 }
 
 AMateria::AMateria(std::string const &type) : _type(type)
@@ -39,13 +39,14 @@ std::string	const	&AMateria::getType(void) const
 	return this->_type;
 }
 
-/*void		AMateria::use(ICharacter &target)
+void		AMateria::use(ICharacter &target)
 {
-	
-}*/
+	std::cout << this->getType() << ": * shoots an ice bolt at ";
+	std::cout << target.getName() << " *" << std::endl;
+}
 
 AMateria::~AMateria()
 {
 	
-	std::cout << "Destructor AMateria called, my type was " << this->_type << std::endl;
+	std::cout << RED << "[ DESTRUCTOR ] " << WHITE << "Destructor AMateria called, my type was " << this->_type << std::endl;
 }

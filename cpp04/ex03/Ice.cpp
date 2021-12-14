@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:31:36 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 16:00:38 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:41:56 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Ice::Ice()
 {
 	this->_type = "ice";
-	std::cout << "Constructor Ice called" << std::endl;
+	std::cout << GREEN << "[ CONSTRUCTOR ] " << WHITE << "Constructor Ice called" << std::endl;
 }
 
 Ice::Ice(Ice const &obj) : AMateria()
@@ -35,7 +35,13 @@ AMateria	*Ice::clone(void) const
 	return this->_amateria;
 }
 
+void		Ice::use(ICharacter &target)
+{
+	std::cout << this->getType() << ": * shoots an ice bolt at ";
+	std::cout << target.getName() << " *" << std::endl;
+}
+
 Ice::~Ice()
 {
-	std::cout << "Destructor Ice called" << std::endl;
+	std::cout << RED << "[ DESTRUCTOR ] " << WHITE << "Destructor Ice called" << std::endl;
 }
