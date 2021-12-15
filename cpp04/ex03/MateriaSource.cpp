@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 11:10:41 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 15:53:03 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/15 12:41:28 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,15 @@ void		MateriaSource::learnMateria(AMateria *toCopy)
 {
 	std::cout << YELLOW << "[ LEARN MATERIA ] " << WHITE;
 	if (_i == 4)
-		std::cout << "Already 4 Materia in memory of materia source";
+	{
+		std::cout << "Already 4 Materia in memory of materia source" << std::endl;
+		delete toCopy;
+	}
 	else
 	{
 		this->_amateria[_i] = toCopy;
 		_i += 1;
 	}
-	std::cout << std::endl;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type)

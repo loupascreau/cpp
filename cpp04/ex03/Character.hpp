@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 10:33:10 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 15:19:51 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/15 12:27:24 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Character : public ICharacter
 	std::string _name;
 	AMateria	*_amateria[4];
 	static int	_i;
+	int			_equiped;
 };
 
 #endif

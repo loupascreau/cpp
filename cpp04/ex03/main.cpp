@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 15:56:30 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/15 12:40:57 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		main(void)
 	IMateriaSource	*src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 	src->learnMateria(new Cure());
 	src->learnMateria(new Cure());
 

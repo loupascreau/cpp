@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:06:14 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/14 15:41:52 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/15 12:39:56 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ void		AMateria::use(ICharacter &target)
 
 AMateria::~AMateria()
 {
-	
 	std::cout << RED << "[ DESTRUCTOR ] " << WHITE << "Destructor AMateria called, my type was " << this->_type << std::endl;
 }
