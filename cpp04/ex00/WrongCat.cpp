@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 13:44:56 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/15 12:09:51 by lpascrea         ###   ########.fr       */
+/*   Created: 2021/12/15 11:52:48 by lpascrea          #+#    #+#             */
+/*   Updated: 2021/12/15 12:10:05 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	this->_type = "Cat";
-	std::cout << "Constructor Cat called" << std::endl;
+	this->_type = "WrongCat";
+	std::cout << "Constructor WrongCat called" << std::endl;
 }
 
-Cat::Cat(Cat const &obj) : Animal()
+WrongCat::WrongCat(WrongCat const &obj) : WrongAnimal()
 {
 	*this = obj;
 	return ;
 }
 
-Cat &	Cat::operator=(Cat const &obj)
+WrongCat &	WrongCat::operator=(WrongCat const &obj)
 {
 	this->_type = obj.getType();
 	return *this;
 }
 
-void	Cat::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
 	std::cout << "[ " << this->_type << " ] : Mmiaaouuu MmiaaaoOOuuuu !!" << std::endl; 
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Destructor Cat called" << std::endl;
+	std::cout << "Destructor WrongCat called" << std::endl;
 }

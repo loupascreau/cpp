@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 14:49:01 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/10 14:29:55 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/15 12:06:09 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ _MAG 	= \033[0;35m
 SRCS		=	main.cpp \
 				Cat.cpp \
 				Dog.cpp \
-				Animal.cpp
+				Animal.cpp \
+				WrongCat.cpp \
+				WrongAnimal.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
