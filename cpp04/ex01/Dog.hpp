@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:20:21 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/13 12:08:57 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/16 12:02:59 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : public Animal
 
 	Dog();
 	Dog(Dog const &obj);
-	~Dog();
+	virtual ~Dog();
 
 	Dog	&	operator=(Dog const &obj);
 
