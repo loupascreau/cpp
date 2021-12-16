@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:17:32 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/15 15:51:44 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/16 12:47:57 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,20 @@ class Bureaucrat
 	Bureaucrat &	operator++(void);
 	Bureaucrat &	operator--(void);
 
-	class GradeTooHighException;
-	class GradeTooLowException;
+	class GradeTooHighException : public std::exception
+	{
+		virtual const char* what() const throw()
+		{
+			return "[ EXCEPTION ] Grade too high !";
+		}
+	};
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char* what() const throw()
+		{
+			return "[ EXCEPTION ] Grade too low !";
+		}
+	};
 
 	std::string const	getName(void) const;
 	int					getGrade(void) const;
