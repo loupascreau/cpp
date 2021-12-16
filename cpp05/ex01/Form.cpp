@@ -6,23 +6,23 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:34:59 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/16 16:25:39 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/16 18:37:47 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form()
+Form::Form() : _name(""), _signed(0), _gradeSign(10), _gradeExec(10)
 {
 	std::cout << "Default Constructor Form called" << std::endl;
 }
 
-Form::Form(std::string name, char gradeSign, char gradeExec) : _name(name), _signed(0), _gradeSign(gradeSign), _gradeExec(gradeExec)
+Form::Form(std::string name, int gradeSign, int gradeExec) : _name(name), _signed(0), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
 	std::cout << "Constructor " << this->_name << " Form called" << std::endl;
 }
 
-Form::Form(Form const &obj)
+Form::Form(Form const &obj) : _gradeSign(10), _gradeExec(10)
 {
 	*this = obj;
 	return ;
@@ -44,9 +44,26 @@ bool				Form::getSigned(void) const
 	return this->_signed;
 }
 
-char				Form::getGrade(void) const
+const int			&Form::getGradeToSign(void) const
 {
-	return this->_grade;
+	return this->_gradeSign;
+}
+
+const int			&Form::getGradeToExec(void) const
+{
+	return this->_gradeExec;
+}
+
+void				Form::beSigned(Bureaucrat& obj)
+{
+	if (this->_gradeSign < 1)
+		throw GradeTooHighException();
+	else if (this->_gradeSign > 150)
+		throw GradeTooLowException();
+	else if (obj.getGrade() <= this->_gradeSign)
+		this->_signed = true;
+	else
+		throw GradeTooLowException();
 }
 
 Form::~Form()
@@ -56,8 +73,9 @@ Form::~Form()
 
 std::ostream &	operator<<(std::ostream &o, Form const &obj)
 {
-	o << obj.getName() << " has the grade " << obj.getGrade();
-	o << " and the signed status = " << obj.getSigned() << std::endl;
+	o << obj.getName() << " | grade to sign = " << obj.getGradeToSign();
+	o << " | grade to execute = " << obj.getGradeToExec();
+	o << " | signed status = " << obj.getSigned();
 	
 	return o;
 }

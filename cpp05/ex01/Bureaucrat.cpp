@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:03:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/16 14:13:11 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/16 18:40:41 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Bureaucrat &	Bureaucrat::operator++(void)
 {
 	std::cout << this->getName() << " incrementation" << std::endl;
 	if (this->_grade - 1 < 1)
-			throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	else if (this->_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else
@@ -50,7 +50,7 @@ Bureaucrat &	Bureaucrat::operator--(void)
 {
 	std::cout << this->getName() << " decrementation" << std::endl;
 	if (this->_grade < 1)
-			throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	else if (this->_grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else
@@ -66,6 +66,22 @@ std::string const	Bureaucrat::getName(void) const
 int					Bureaucrat::getGrade(void) const
 {
 	return this->_grade;
+}
+
+void				Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		if (form.getGradeToSign() < this->_grade)
+			throw Form::GradeTooLowException();
+//		form.beSigned(*this);
+		std::cout << this->_name << " signs " << form.getName();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << this->_name << " cannot sign because " << e.what();
+	}
+	std::cout << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
