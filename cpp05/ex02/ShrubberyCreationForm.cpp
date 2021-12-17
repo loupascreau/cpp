@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 09:46:00 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 11:13:59 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 13:03:34 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 	return this->_target;
 }
 
-void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	std::string	tmp;
 	char		newFileName[1024];
@@ -52,7 +52,9 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	{
 		if (executor.getGrade() > this->getGradeToExec())
 			throw GradeTooLowException();
-		std::cout << "Drawing shrubbery .." << std::endl;
+		if (this->getSigned() == false)
+			throw GradeTooHighException();
+		std::cout << executor.getName() << " executs " << this->_target << std::endl;
 		std::ofstream	newFile;		
 		newFile.open(newFileName);
 		if (newFile.is_open())
@@ -75,7 +77,7 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 	catch (std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << executor.getName() << " cannot executs " << this->_target << " because " << e.what() << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:35:01 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 10:26:23 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 11:46:13 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Form
 	{
 		virtual const char* what() const throw()
 		{
-			return "Signed grade is too high";
+			return "Grade is too high";
 		}
 	};
 
@@ -50,7 +50,7 @@ class Form
 	{
 		virtual const char* what() const throw()
 		{
-			return "Signed grade is too low";
+			return "Grade is too low";
 		}
 	};
 

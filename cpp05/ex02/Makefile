@@ -6,7 +6,7 @@
 #    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 14:49:01 by lpascrea          #+#    #+#              #
-#    Updated: 2021/12/17 10:02:54 by lpascrea         ###   ########.fr        #
+#    Updated: 2021/12/17 12:51:47 by lpascrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ _MAG 	= \033[0;35m
 SRCS		=	main.cpp \
 				Bureaucrat.cpp \
 				Form.cpp \
-				ShrubberyCreationForm.cpp
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
+				PresidentialPardonForm.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 

@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:17:32 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 09:27:49 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 11:43:36 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,11 @@ class Bureaucrat
 	std::string const	getName(void) const;
 	int					getGrade(void) const;
 	
+	void				checkGrade(void) const;
+	
 	void				signForm(Form &form);
+
+	void				executeForm(Form const &form);
 
 	private :
 

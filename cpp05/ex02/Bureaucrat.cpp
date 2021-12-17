@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:03:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 09:33:17 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 11:59:10 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,14 @@ int					Bureaucrat::getGrade(void) const
 	return this->_grade;
 }
 
+void				Bureaucrat::checkGrade(void) const
+{
+	if (this->_grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (this->_grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+}
+
 void				Bureaucrat::signForm(Form &form)
 {
 	std::cout << YELLOW << "[ SIGNATURE ] " << WHITE;
@@ -82,6 +90,12 @@ void				Bureaucrat::signForm(Form &form)
 		std::cout << this->_name << " cannot sign because " << e.what();
 	}
 	std::cout << std::endl;
+}
+
+void				Bureaucrat::executeForm(Form const &form)
+{
+	std::cout << YELLOW << "[ EXECUTING ] " << WHITE;
+	form.execute(*this);
 }
 
 Bureaucrat::~Bureaucrat()
