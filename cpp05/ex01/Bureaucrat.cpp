@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:03:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 09:33:17 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 11:42:13 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,14 @@ std::string const	Bureaucrat::getName(void) const
 int					Bureaucrat::getGrade(void) const
 {
 	return this->_grade;
+}
+
+void				Bureaucrat::checkGrade(void) const
+{
+	if (this->_grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (this->_grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 void				Bureaucrat::signForm(Form &form)
