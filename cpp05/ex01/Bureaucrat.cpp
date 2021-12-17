@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:03:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/16 18:40:41 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 09:33:17 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ Bureaucrat::Bureaucrat() : _name(""), _grade(1)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	std::cout << "Constructor " << this->_name << " Bureaucrat called" << std::endl;
+	std::cout << GREEN << "[ CONSTRUCTOR ] " << WHITE;
+	std::cout << this->_name << " Bureaucrat called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &obj)
@@ -70,11 +71,10 @@ int					Bureaucrat::getGrade(void) const
 
 void				Bureaucrat::signForm(Form &form)
 {
+	std::cout << YELLOW << "[ SIGNATURE ] " << WHITE;
 	try
 	{
-		if (form.getGradeToSign() < this->_grade)
-			throw Form::GradeTooLowException();
-//		form.beSigned(*this);
+		form.beSigned(*this);
 		std::cout << this->_name << " signs " << form.getName();
 	}
 	catch (std::exception & e)
@@ -86,12 +86,14 @@ void				Bureaucrat::signForm(Form &form)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destructor " << this->_name << " Bureaucrat called" << std::endl;
+	std::cout << RED << "[ DESTRUCTOR ] " << WHITE;
+	std::cout << this->_name << " Bureaucrat called" << std::endl;
 }
 
 std::ostream &	operator<<(std::ostream &o, Bureaucrat const &obj)
 {
-	o << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+	o << BLUE << "[ BUREAUCRAT ] " << WHITE << obj.getName();
+	o << " is a bureaucrat with grade " << obj.getGrade();
 	
 	return o;
 }

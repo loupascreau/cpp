@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/16 18:15:29 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 09:34:32 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,8 @@ int		main(void)
 	Bureaucrat	jack = Bureaucrat("Jack", 1);
 	Form		vaccin = Form("Vaccin", 39, 22);
 
-/*	std::cout << jack << std::endl;
+	std::cout << jack << std::endl;
 	std::cout << vaccin << std::endl;
-	try
-	{
-		++jack;
-		std::cout << jack << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}*/
-	vaccin.beSigned(jack);
 	jack.signForm(vaccin);
 	std::cout << std::endl;
 
@@ -39,23 +29,10 @@ int		main(void)
 	Form		windows = Form("Windows", 130, 103);
 	Form		lunettes = Form("lunettes", 92, 111);
 
-/*	std::cout << tim << std::endl;
+	std::cout << tim << std::endl;
 	std::cout << windows << std::endl;
 	std::cout << lunettes << std::endl;
-	try
-	{
-		--tim;
-		std::cout << tim << std::endl;
-		--tim;
-		std::cout << tim << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}*/
-	windows.beSigned(tim);
 	tim.signForm(windows);
-	lunettes.beSigned(tim);
 	tim.signForm(lunettes);
 	std::cout << std::endl;
 

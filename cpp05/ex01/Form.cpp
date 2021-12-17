@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:34:59 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/16 18:37:47 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 09:33:45 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ Form::Form() : _name(""), _signed(0), _gradeSign(10), _gradeExec(10)
 
 Form::Form(std::string name, int gradeSign, int gradeExec) : _name(name), _signed(0), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
-	std::cout << "Constructor " << this->_name << " Form called" << std::endl;
+	std::cout << GREEN << "[ CONSTRUCTOR ] " << WHITE;
+	std::cout << this->_name << " Form called" << std::endl;
 }
 
 Form::Form(Form const &obj) : _gradeSign(10), _gradeExec(10)
@@ -68,11 +69,13 @@ void				Form::beSigned(Bureaucrat& obj)
 
 Form::~Form()
 {
-	std::cout << "Destructor Form called" << std::endl;
+	std::cout << RED << "[ DESTRUCTOR ] " << WHITE;
+	std::cout << this->_name << " Form called" << std::endl;
 }
 
 std::ostream &	operator<<(std::ostream &o, Form const &obj)
 {
+	o << BLUE << "[ VACCIN ] " << WHITE;
 	o << obj.getName() << " | grade to sign = " << obj.getGradeToSign();
 	o << " | grade to execute = " << obj.getGradeToExec();
 	o << " | signed status = " << obj.getSigned();
