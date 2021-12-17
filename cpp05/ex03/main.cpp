@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 13:04:59 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 15:58:47 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,70 +14,75 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int		main(void)
 {
-	Bureaucrat	jack = Bureaucrat("Jack", 1);
-	Bureaucrat	sylvie = Bureaucrat("Sylvie", 51);
-	Bureaucrat	tim = Bureaucrat("Tim", 147);
+	Bureaucrat	jack = Bureaucrat("Jack", 12);
+	Intern		intern;
 
 	std::cout << std::endl;
-
 	Form		*form = NULL;
 
-	/*******************ShrubberyCreationForm********************/
-	try
+	/*****************form invalid*****************/
+	form = intern.makeForm("jshd", "T12");
+	if (form != NULL)
 	{
-		tim.checkGrade();
-		form = new ShrubberyCreationForm("28A");
+		std::cout << *form << std::endl;
+		try
+		{
+			jack.checkGrade();
+			jack.signForm(*form);
+			jack.executeForm(*form);
+			delete form;
+		}
+		catch (std::exception & e)
+		{
+			std::cout << e.what() << std::endl;
+			delete form;	
+		}
+	}
+	std::cout << std::endl;
 
-		tim.signForm(*form);
-		tim.executeForm(*form);
-		delete form;
-	}
-	catch (std::exception & e)
+	/******************presidential form****************/
+	form = intern.makeForm("presidential pardon", "P22");
+	if (form != NULL)
 	{
-		std::cout << e.what() << std::endl;
-		delete form;
+		std::cout << *form << std::endl;
+		try
+		{
+			jack.checkGrade();
+			jack.signForm(*form);
+			jack.executeForm(*form);
+			delete form;
+		}
+		catch (std::exception & e)
+		{
+			std::cout << e.what() << std::endl;
+			delete form;	
+		}
 	}
-	form = NULL;
 	std::cout << std::endl;
 	
-	/*******************RobotomyRequestForm********************/
-	try
+	/******************Shrubbery form******************/
+	form = intern.makeForm("shrubbery creation", "B2B");
+	if (form != NULL)
 	{
-		sylvie.checkGrade();
-		form = new RobotomyRequestForm("17R");
-
-		sylvie.signForm(*form);
-		sylvie.executeForm(*form);
-		delete form;
+		std::cout << *form << std::endl;
+		try
+		{
+			jack.checkGrade();
+			jack.signForm(*form);
+			jack.executeForm(*form);
+			delete form;
+		}
+		catch (std::exception & e)
+		{
+			std::cout << e.what() << std::endl;
+			delete form;	
+		}
 	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-		delete form;
-	}
-	form = NULL;
-	std::cout << std::endl;
-
-	/*******************PresidentialPardonForm********************/
-	try
-	{
-		jack.checkGrade();
-		form = new PresidentialPardonForm("32P");
-
-		jack.signForm(*form);
-		jack.executeForm(*form);
-		delete form;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-		delete form;
-	}
-	form = NULL;
-	std::cout << std::endl;
 	
+	std::cout << std::endl;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:34:59 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 10:42:30 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/17 15:45:37 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ Form::~Form()
 
 std::ostream &	operator<<(std::ostream &o, Form const &obj)
 {
-	o << BLUE << "[ VACCIN ] " << WHITE;
+	o << BLUE << "[ FORM ] " << WHITE;
 	o << obj.getName() << " | grade to sign = " << obj.getGradeToSign();
 	o << " | grade to execute = " << obj.getGradeToExec();
 	o << " | signed status = " << obj.getSigned();
