@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 11:43:13 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:48:35 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		main(void)
 		std::cout << jack << std::endl;
 		std::cout << vaccin << std::endl;
 		jack.signForm(vaccin);
+		std::cout << vaccin << std::endl;
 		std::cout << std::endl;
 	}
 	catch (std::exception & e)
@@ -44,7 +45,9 @@ int		main(void)
 		std::cout << windows << std::endl;
 		std::cout << lunettes << std::endl;
 		tim.signForm(windows);
+		std::cout << windows << std::endl;
 		tim.signForm(lunettes);
+		std::cout << lunettes << std::endl;
 		std::cout << std::endl;
 	}
 	catch (std::exception & e)

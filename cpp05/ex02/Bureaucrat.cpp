@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:03:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 11:59:10 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/20 10:17:29 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 	std::cout << this->_name << " Bureaucrat called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &obj)
+Bureaucrat::Bureaucrat(Bureaucrat const &obj) : _name(obj._name)
 {
 	*this = obj;
 	return ;

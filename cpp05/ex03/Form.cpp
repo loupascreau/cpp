@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:34:59 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/17 15:45:37 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/20 10:20:30 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Form::Form(std::string name, int gradeSign, int gradeExec) : _name(name), _signe
 	std::cout << this->_name << " Form called" << std::endl;
 }
 
-Form::Form(Form const &obj) : _gradeSign(150), _gradeExec(150)
+Form::Form(Form const &obj) : _name(obj._name), _gradeSign(obj._gradeSign), _gradeExec(obj._gradeExec)
 {
 	*this = obj;
 	return ;
@@ -32,7 +32,7 @@ Form::Form(Form const &obj) : _gradeSign(150), _gradeExec(150)
 
 Form &	Form::operator=(Form const &obj)
 {
-	std::cout << "Assignation operator useless for " << &obj << std::endl;
+	this->_signed = obj.getSigned();
 	return *this;
 }
 
@@ -76,7 +76,7 @@ Form::~Form()
 
 std::ostream &	operator<<(std::ostream &o, Form const &obj)
 {
-	o << BLUE << "[ FORM ] " << WHITE;
+	o << BLUE << "[ FORM STATUS ] " << WHITE;
 	o << obj.getName() << " | grade to sign = " << obj.getGradeToSign();
 	o << " | grade to execute = " << obj.getGradeToExec();
 	o << " | signed status = " << obj.getSigned();

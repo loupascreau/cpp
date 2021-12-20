@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/16 14:17:19 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:44:07 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		main(void)
 	std::cout << jack << std::endl;
 	try
 	{
+		jack.checkGrade();
 		++jack;
 		std::cout << jack << std::endl;
 		++jack;
@@ -39,6 +40,7 @@ int		main(void)
 	std::cout << sylvie << std::endl;
 	try
 	{
+		sylvie.checkGrade();
 		--sylvie;
 		std::cout << sylvie << std::endl;
 		--sylvie;
@@ -58,6 +60,7 @@ int		main(void)
 	std::cout << tim << std::endl;
 	try
 	{
+		tim.checkGrade();
 		++tim;
 		std::cout << tim << std::endl;
 		--tim;
@@ -77,6 +80,7 @@ int		main(void)
 	std::cout << Bobby << std::endl;
 	try
 	{
+		Bobby.checkGrade();
 		--Bobby;
 		std::cout << Bobby << std::endl;
 		++Bobby;

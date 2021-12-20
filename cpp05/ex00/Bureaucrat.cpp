@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:03:42 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/16 14:13:11 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/20 10:16:59 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 	std::cout << "Constructor " << this->_name << " Bureaucrat called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &obj)
+Bureaucrat::Bureaucrat(Bureaucrat const &obj) : _name(obj._name)
 {
 	*this = obj;
 	return ;
@@ -67,6 +67,15 @@ int					Bureaucrat::getGrade(void) const
 {
 	return this->_grade;
 }
+
+void				Bureaucrat::checkGrade(void) const
+{
+	if (this->_grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (this->_grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+}
+
 
 Bureaucrat::~Bureaucrat()
 {
