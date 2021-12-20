@@ -1,0 +1,54 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/02 14:49:01 by lpascrea          #+#    #+#              #
+#    Updated: 2021/12/20 12:04:18 by lpascrea         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#COLORS#
+_END	= \033[0m
+_GREEN	= \033[0;32m
+_RED	= \033[0;31m
+_BLUE	= \033[0;96m
+_YELLOW	= \033[0;33m
+_MAG 	= \033[0;35m
+#------#
+
+SRCS		=	main.cpp \
+				Convert.cpp
+
+OBJS		=	${SRCS:.cpp=.o}
+
+CC			=	clang++
+
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -g
+
+RM			=	rm -f
+
+NAME		=	convert
+
+all:		${NAME}
+			@echo "$(_GREEN)convert is ready $(_END)"
+
+$(NAME):	${OBJS}
+			${CC} ${CFLAGS} -I. ${OBJS} -o ${NAME}
+
+%.o:		%.cpp
+			${CC} ${CFLAGS} -o $@ -c $< -I.
+
+clean:
+			${RM} ${OBJS}
+			@echo "$(_YELLOW)\".o\" files deleted $(_END)"
+
+fclean:		clean
+			${RM} ${NAME}
+			@echo "$(_RED)convert cleaned $(_END)"
+
+re:			fclean all
+
+.PHONY:		all clean fclean re
