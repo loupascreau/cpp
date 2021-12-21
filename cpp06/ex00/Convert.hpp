@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:59:45 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/20 15:10:37 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/21 11:20:07 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <cstdlib>
 # include <cmath>
+# include <iomanip>
 
 class Convert
 {
@@ -44,6 +45,7 @@ class Convert
 	};
 
 	void	handleErrors(int argc);
+	void	isError(int n, char *string);
 
 	void	setType(char *string);
 
@@ -53,6 +55,7 @@ class Convert
 	void	isInt(char *string);
 	void	isFloat(char *string);
 	void	isDouble(char *string);
+	bool	_isError;
 };
 
 #endif
