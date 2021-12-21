@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:59:48 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/20 15:25:19 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/21 09:24:06 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		Convert::isChar(char *string)
 	{
 		if (n == 0 && string[1] != '\0')
 			std::cout << "impossible" << std::endl;
-		else if (string[0] < 32 || string[0] > 126)
+		else if ((string[0] < 'a' || string[0] > 'z') && (string[0] < 'A' || string[0] > 'Z'))
 			std::cout << "Non displayble" << std::endl;
 		else if (string[1] == '\0')
 			std::cout << "'" << string[0] << "'" << std::endl;
