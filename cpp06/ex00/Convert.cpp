@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:59:48 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/22 10:00:51 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:27:03 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,13 @@ void		Convert::isError(int n, char *string)
 {
 	int		len = 0;
 
+	if (n < 0)
+	{
+		n *= -1;
+		len++;
+	}
 	if (n != 0)
-		len = log10(n) + 1;
+		len += log10(n) + 1;
 	if (string[len] != '\0' && n != 0)
 	{
 		if (string[len] != 'f' && string[len] != '.')
@@ -72,7 +77,7 @@ void		Convert::isChar(char *string)
 
 	n = std::atof(string);
 	std::cout << "char : ";
-	if (string[0] >= '0' && string[0] <= '9')
+	if ((string[0] >= '0' && string[0] <= '9') || string[0] == '-')
 		this->isError(n, string);
 	else if (string[1] != '\0')
 	{
