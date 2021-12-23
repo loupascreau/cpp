@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 16:43:30 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/23 10:58:24 by lpascrea         ###   ########.fr       */
+/*   Created: 2021/12/23 11:14:54 by lpascrea          #+#    #+#             */
+/*   Updated: 2021/12/23 11:45:55 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 # include <iostream>
 
 template <typename T>
-void	iter(T *array, int len, void (*ftPass)(T &array, int len))
+class Array
 {
-	ftPass(*array, len);
-};
+	public :
+	
+	Array<T>(void) : _array(new T[0]) {};
+	Array<T>(unsigned int n) : _array(new T[n]) {};
+//	Array<T>(Array<T> const & obj) {};
+	~Array<T>(void) {};
 
-template <typename T>
-void	ftIncrement(T &array, int len)
-{
-	int		i;
+	private :
 
-	i = 0;
-	while (i < len)
-	{
-		array[i] += 1;
-		i++;
-	}
+	T	*_array;
 };
 
 #endif
