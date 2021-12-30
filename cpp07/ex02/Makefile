@@ -25,7 +25,7 @@ OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror #-fsanitize=address -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror
 
 RM			=	rm -f
 
