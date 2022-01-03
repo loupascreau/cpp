@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2022/01/03 11:39:04 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/03 14:45:46 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int		main(void)
 	lst.push_back(13);
 	lst.push_back(42);
 	
-	easyfind(lst, 12);
+	std::list<int>::const_iterator	it;
+
+	it = easyfind(lst, 12);
+	std::cout << "it = " << *it << std::endl;
 	return 0;
 }
