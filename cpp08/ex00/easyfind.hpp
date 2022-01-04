@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 11:06:40 by kali              #+#    #+#             */
-/*   Updated: 2022/01/03 14:44:10 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/04 05:53:56 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <iostream>
 # include <list>
 # include <algorithm>
+# include <ctime>
+# include <cstdlib>
+# include <vector>
+# define	MAX	50
 
 template <typename T>
 typename T::iterator   easyfind(T &container, int i)
