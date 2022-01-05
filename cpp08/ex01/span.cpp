@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 06:22:57 by kali              #+#    #+#             */
-/*   Updated: 2022/01/04 12:46:22 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/05 11:00:11 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		Span::shortestSpan(Span const &obj) const
 	int							span;
 
 	span = -1;
-	if (obj.getSize() <= 1)
+	if (obj.getSize() <= 1 || obj.getVectorSize() <= 1)
 		throw noSpan();
 	tmp = obj.getVector();
 	sort(tmp.begin(), tmp.end());
@@ -80,7 +80,7 @@ int		Span::longestSpan(Span const &obj) const
 	int							span;
 
 	span = -1;
-	if (obj.getSize() <= 1)
+	if (obj.getSize() <= 1 || obj.getVectorSize() <= 1)
 		throw noSpan();
 	tmp = obj.getVector();
 	sort(tmp.begin(), tmp.end());
@@ -100,6 +100,11 @@ int		Span::longestSpan(Span const &obj) const
 int							Span::getSize(void) const
 {
 	return this->_size;
+}
+
+int							Span::getVectorSize(void) const
+{
+	return this->_vec.size();
 }
 
 std::vector<int>			Span::getVector(void) const
@@ -127,16 +132,18 @@ std::ostream &  operator<<(std::ostream &o, Span const &obj)
 	std::vector<int>::const_iterator	it;
 	
 	/**********Print span numbers********/
-	o << std::endl;
 	o << "[ SPAN Recap ]" << std::endl;
-	o << "numbers : ";
-	for (it = obj.getBegin(); it != obj.getEnd(); it++)
+	if (obj.getVectorSize() > 0)
 	{
-		o << *it;
-		if (it + 1 != obj.getEnd())
-			o << " -> ";
+		o << "numbers : ";
+		for (it = obj.getBegin(); it != obj.getEnd(); it++)
+		{
+			o << *it;
+			if (it + 1 != obj.getEnd())
+				o << " -> ";
+		}
+		o << std::endl;
 	}
-	o << std::endl;
 
 	/**********Shortest span***********/
 	try

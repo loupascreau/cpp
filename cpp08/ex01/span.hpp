@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 06:22:00 by kali              #+#    #+#             */
-/*   Updated: 2022/01/04 12:02:17 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/05 10:34:08 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Span
     };
 
 	int									getSize(void) const;
+	int									getVectorSize(void) const;
 	std::vector<int>					getVector(void) const;
 	std::vector<int>::const_iterator	getBegin(void) const;
 	std::vector<int>::const_iterator	getEnd(void) const;
