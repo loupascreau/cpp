@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2022/01/05 12:24:44 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/05 15:43:17 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,24 @@
 int		main(void)
 {
 	std::stack<int>		stack;
+	MutantStack<int>	mstack;
 
-	if (stack.empty())
-		std::cout << "stack is empty" << std::endl;
-	std::cout << "0. size = " << stack.size() << std::endl;
+	mstack.push(5);
+	mstack.push(47);
+	mstack.push(12);
+	mstack.push(24);
 
-	for (int i = 0; i < 5; i++)
-		stack.push(i);
-	std::cout << "1. size = " << stack.size() << std::endl;
+	std::cout << mstack;
 
-	stack.pop();
-	std::cout << "2. size = " << stack.size() << std::endl;
+	std::cout << "top = " << mstack.top() << " size = " << mstack.size() << std::endl;
+	std::cout << "..top() -= 4" << std::endl;
+	mstack.top() -= 4;
+	std::cout << "top = " << mstack.top() << " size = " << mstack.size() << std::endl;
+
+	mstack.pop();
+	std::cout << "..pop().." << std::endl;
+
+	std::cout << "top = " << mstack.top() << " size = " << mstack.size() << std::endl;
+
 	return 0;
 }
