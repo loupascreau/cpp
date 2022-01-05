@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 06:22:57 by kali              #+#    #+#             */
-/*   Updated: 2022/01/05 11:00:11 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/05 11:52:27 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Span::Span(void) : _size(0), _vec(0)
 
 Span::Span(unsigned int number) : _size(number), _vec(0)
 {
-	std::cout << "Span constructor called (size = " << this->_size << ")" << std::endl;
-	std::cout << std::endl;
+	std::cout << GREEN << "[ CONSTRUCTOR ] " << END;
+	std::cout << "Span called (size = " << this->_size << ")" << std::endl;
 }
 
 Span::Span(Span const &obj)
@@ -38,15 +38,12 @@ Span &	Span::operator=(Span const &obj)
 void	Span::addNumber(int nbrToStore)
 {
 	if (this->_vec.size() == this->_size)
-		std::cout << "Impossible to add (" << nbrToStore << ") : storage full" << std::endl;
+		std::cout << "Impossible to add (" << nbrToStore << ") : storage already full" << std::endl;
 	else
-	{
 		this->_vec.push_back(nbrToStore);
-		std::cout << "(" << nbrToStore << ") added" << std::endl;
-	}
 }
 
-int		Span::shortestSpan(Span const &obj) const
+int		Span::shortestSpan(void) const
 {
 	std::vector<int>			tmp;
 	std::vector<int>::iterator	it;
@@ -54,12 +51,12 @@ int		Span::shortestSpan(Span const &obj) const
 	int							span;
 
 	span = -1;
-	if (obj.getSize() <= 1 || obj.getVectorSize() <= 1)
+	if (this->getSize() <= 1 || this->getVectorSize() <= 1)
 		throw noSpan();
-	tmp = obj.getVector();
+	tmp = this->getVector();
 	sort(tmp.begin(), tmp.end());
 	span = *(tmp.end() - 1) - *(tmp.begin());
-	if (obj.getSize() == 2)
+	if (this->getSize() == 2)
 		return span;
 	for (it = tmp.begin(); it != tmp.end(); it++)
 	{
@@ -72,7 +69,7 @@ int		Span::shortestSpan(Span const &obj) const
 	return span;
 }
 
-int		Span::longestSpan(Span const &obj) const
+int		Span::longestSpan(void) const
 {
 	std::vector<int>			tmp;
 	std::vector<int>::iterator	it;
@@ -80,11 +77,11 @@ int		Span::longestSpan(Span const &obj) const
 	int							span;
 
 	span = -1;
-	if (obj.getSize() <= 1 || obj.getVectorSize() <= 1)
+	if (this->getSize() <= 1 || this->getVectorSize() <= 1)
 		throw noSpan();
-	tmp = obj.getVector();
+	tmp = this->getVector();
 	sort(tmp.begin(), tmp.end());
-	if (obj.getSize() == 2)
+	if (this->getSize() == 2)
 		return (*(tmp.end() - 1) - *(tmp.begin()));
 	for (it = tmp.begin(); it != tmp.end(); it++)
 	{
@@ -122,34 +119,45 @@ std::vector<int>::const_iterator			Span::getEnd(void) const
 	return this->_vec.end();
 }
 
+void						Span::setBigSpan(void)
+{
+	int		i;
+	
+	i = 0;
+	std::srand(std::time(NULL));
+	while (i < this->getSize())
+	{
+		this->addNumber(rand());
+		i++;
+	}
+}
+
+void	Span::addByRangeIterator(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	while (begin != end)
+	{
+		this->addNumber(*begin);
+		begin++;
+	}
+}
+
 Span::~Span(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << RED << "[ DESTRUCTOR ] " << END;
+	std::cout << "Span called" << std::endl;
 }
 
 std::ostream &  operator<<(std::ostream &o, Span const &obj)
 {
 	std::vector<int>::const_iterator	it;
 	
-	/**********Print span numbers********/
-	o << "[ SPAN Recap ]" << std::endl;
-	if (obj.getVectorSize() > 0)
-	{
-		o << "numbers : ";
-		for (it = obj.getBegin(); it != obj.getEnd(); it++)
-		{
-			o << *it;
-			if (it + 1 != obj.getEnd())
-				o << " -> ";
-		}
-		o << std::endl;
-	}
+	o << YELLOW << "[ SPAN Recap ]" << END << std::endl;
 
 	/**********Shortest span***********/
 	try
 	{
 		o << "Shortest span : ";
-		o << obj.shortestSpan(obj);
+		o << obj.shortestSpan();
 	}
 	catch (std::exception & e)
 	{
@@ -161,7 +169,7 @@ std::ostream &  operator<<(std::ostream &o, Span const &obj)
 	try
 	{
 		o << "Longest span : ";
-		o << obj.longestSpan(obj);
+		o << obj.longestSpan();
 	}
 	catch (std::exception & e)
 	{

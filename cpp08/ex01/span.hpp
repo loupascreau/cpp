@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 06:22:00 by kali              #+#    #+#             */
-/*   Updated: 2022/01/05 10:34:08 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/05 11:52:11 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdexcept>
 # include <vector>
 # include <algorithm>
+# include <ctime>
+# include <cstdlib>
+# define	END		"\033[0m"
+# define	RED		"\033[0;31m"
+# define	GREEN	"\033[0;32m"
+# define	YELLOW	"\033[0;33m"
 
 class Span
 {
@@ -30,8 +36,8 @@ class Span
 	Span &  operator=(Span const &obj);
 
 	void	addNumber(int nbrToStore);
-	int		shortestSpan(Span const &obj) const;
-	int		longestSpan(Span const &obj) const;
+	int		shortestSpan(void) const;
+	int		longestSpan(void) const;
 
 	class noSpan : public std::exception
     {
@@ -46,6 +52,9 @@ class Span
 	std::vector<int>					getVector(void) const;
 	std::vector<int>::const_iterator	getBegin(void) const;
 	std::vector<int>::const_iterator	getEnd(void) const;
+
+	void								setBigSpan(void);
+	void								addByRangeIterator(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
 	private :
 
