@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:04:22 by lpascrea          #+#    #+#             */
-/*   Updated: 2022/01/05 16:00:44 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/10 06:13:36 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <stack>
+# include <list>
 
 template <typename T>
 class MutantStack : public std::stack<T>
