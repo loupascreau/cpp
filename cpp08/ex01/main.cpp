@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2022/01/05 11:53:09 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/11 07:50:17 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int		main(void)
 	sp.addNumber(84);
 
 	std::cout << sp << std::endl;
+
+	Span						spEmpty = Span(0);
+
+	std::cout << spEmpty << std::endl;
 
 	/*************Lot of numbers************/
 

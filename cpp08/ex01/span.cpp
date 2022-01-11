@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 06:22:57 by kali              #+#    #+#             */
-/*   Updated: 2022/01/05 11:52:27 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/11 07:53:40 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,17 @@ Span &	Span::operator=(Span const &obj)
 
 void	Span::addNumber(int nbrToStore)
 {
-	if (this->_vec.size() == this->_size)
-		std::cout << "Impossible to add (" << nbrToStore << ") : storage already full" << std::endl;
-	else
-		this->_vec.push_back(nbrToStore);
+	try
+	{
+		if (this->_vec.size() == this->_size)
+			throw noSpaceToAddNbr();
+		else
+			this->_vec.push_back(nbrToStore);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 int		Span::shortestSpan(void) const

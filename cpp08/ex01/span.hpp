@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 06:22:00 by kali              #+#    #+#             */
-/*   Updated: 2022/01/05 11:52:11 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/11 07:52:33 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ class Span
 	void	addNumber(int nbrToStore);
 	int		shortestSpan(void) const;
 	int		longestSpan(void) const;
+
+	class noSpaceToAddNbr : public std::exception
+    {
+        virtual const char* what() const throw()
+        {
+            return "Impossible to add a number : storage already full";
+        }
+    };
 
 	class noSpan : public std::exception
     {
