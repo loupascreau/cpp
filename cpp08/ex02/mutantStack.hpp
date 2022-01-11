@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 12:04:22 by lpascrea          #+#    #+#             */
-/*   Updated: 2022/01/10 06:13:36 by lpascrea         ###   ########.fr       */
+/*   Updated: 2022/01/11 07:42:23 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,12 @@ class MutantStack : public std::stack<T>
 	}
 
 	MutantStack &	operator=(MutantStack<T> const & obj) { return *this; }
+
+//	typedef	typename	std::deque<T>::iterator						iterator;
+	typedef typename	std::stack<T>::container_type::iterator		iterator;
+
+	iterator	begin(void) { return this->c.begin(); }
+	iterator	end(void) { return this->c.end(); }
 };
 
 template <typename T>
@@ -51,6 +57,7 @@ std::ostream &  operator<<(std::ostream &o, MutantStack<T> const &obj)
 	if (!obj.empty())
 	{
 		temp = obj;
+		o << "stack from MutantStack : " << std::endl;
 		while (!temp.empty())
 		{
 			o << " " << temp.top() << std::endl;
